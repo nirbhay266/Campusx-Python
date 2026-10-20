@@ -324,5 +324,3 @@ minutes_angle=m*6
 angle=abs(hours_angle-minutes_angle)
 final_angle=min(angle,360-angle)
 print(f"Angle between hour and minute hand is: {final_angle} degrees")
-
-
