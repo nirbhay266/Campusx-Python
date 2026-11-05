@@ -1,29 +1,59 @@
-def min_edit_distance(word1, word2):
-    m = len(word1)
-    n = len(word2)
+# def min_edit_distance(word1, word2):
+#     m = len(word1)
+#     n = len(word2)
 
-    dp = [[0] * (n + 1) for _ in range(m + 1)]
+#     dp = [[0] * (n + 1) for _ in range(m + 1)]
 
-    for i in range(m + 1):
-        dp[i][0] = i
+#     for i in range(m + 1):
+#         dp[i][0] = i
 
-    for j in range(n + 1):
-        dp[0][j] = j
+#     for j in range(n + 1):
+#         dp[0][j] = j
 
-    for i in range(1, m + 1):
-        for j in range(1, n + 1):
+#     for i in range(1, m + 1):
+#         for j in range(1, n + 1):
 
-            if word1[i - 1] == word2[j - 1]:
-                dp[i][j] = dp[i - 1][j - 1]
-            else:
-                dp[i][j] = 1 + min(
-                    dp[i - 1][j],      # Deletion
-                    dp[i][j - 1],      # Insertion
-                    dp[i - 1][j - 1]   # Replacement
-                )
+#             if word1[i - 1] == word2[j - 1]:
+#                 dp[i][j] = dp[i - 1][j - 1]
+#             else:
+#                 dp[i][j] = 1 + min(
+#                     dp[i - 1][j],      # Deletion
+#                     dp[i][j - 1],      # Insertion
+#                     dp[i - 1][j - 1]   # Replacement
+#                 )
 
-    return dp[m][n]
+#     return dp[m][n]
 
 
-print(min_edit_distance("cat", "cut"))
-print(min_edit_distance("book", "books"))
+# print(min_edit_distance("cat", "cut"))
+# print(min_edit_distance("book", "books"))
+
+# a = [1, 2, 3, [4, 5]]
+
+# b = a[:]
+
+# b[-1][0] = 400
+
+# print(a)
+# print(b)
+
+# b[2]= 3000
+
+# print(a)
+# print(b)
+# import numpy as np
+# matrix = np.array([[1, 2, 3], 
+#                    [4, 5, 6]])
+
+# print(matrix.T)
+
+
+
+
+import sys
+
+a = [10, 20, 30]
+b = (10, 20, 30)
+
+print(sys.getsizeof(a))
+print(sys.getsizeof(b))
